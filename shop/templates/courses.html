@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Cousers</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Title: </th>
+                <th>Category:</th>
+                <th>Price:</th>
+                <th>Students_qty:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{course.title}}</td>
+                <td>{{course.category}}</td>
+                <td>{{course.price}}</td>
+                <td>{{course.students_qty}}</td>
+                <td><button>Buy</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
