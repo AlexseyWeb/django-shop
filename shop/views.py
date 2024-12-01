@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from . models import Course
 
 # Create your views here.
@@ -11,5 +11,8 @@ def index(request):
 
 
 def single_course(request, course_id):
-    course = Course.objects.get(pk=course_id)
-    return render(request, 'single_course.html', {'course': course})
+    try:
+        course = Course.objects.get(pk=course_id)
+        return render(request, 'single_course.html', {'course': course})
+    except Course.DoesNotExist as err:
+        raise Http404()
