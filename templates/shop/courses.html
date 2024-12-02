@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{%block title%}All courses{%endblock%}
+{%block title%}Все курсы{%endblock%}
 
 {% block content  %}
     <table class="table mt-5 table-border table-striped table-hover">
         <thead class="table-dark">
             <tr>
-                <th>Title: </th>
-                <th>Category:</th>
-                <th>Price:</th>
-                <th>Students_qty:</th>
+                <th>Название: </th>
+                <th>Категория:</th>
+                <th>Цена:</th>
+                <th>Кол-во студентов:</th>
                 <th></th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@
                 <td>{{course.category}}</td>
                 <td>{{course.price}}</td>
                 <td>{{course.students_qty}}</td>
-                <td><button class="btn btn-primary">Buy</button></td>
+                <td><button class="btn btn-primary">Купить</button></td>
             </tr>
             {% endfor %}
         </tbody>
